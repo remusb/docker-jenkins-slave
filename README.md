@@ -8,4 +8,4 @@ To pull this image:
 
 Example usage:
 
-`docker run -it --rm jenkins:slave http://jenkins.example.com:8080/computer/localdev/slave-agent.jnlp`
+`docker run -d --name jenkins-slave mbentley/jenkins-slave http://jenkins.example.com:8080/computer/localdev/slave-agent.jnlp`
