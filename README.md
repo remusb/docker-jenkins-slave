@@ -1,7 +1,7 @@
 mbentley/jenkins-slave
 ======================
 
-docker image for jenkins slaves
+docker image for jenkins slaves (jnlp)
 
 To pull this image:
 `docker pull mbentley/jenkins-slave`
