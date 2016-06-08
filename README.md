@@ -12,6 +12,7 @@ Example usage:
 docker run -d --name jenkins-slave \
   -v /var/run/docker.sock:/var/run/docker.sock \
   -v jenkins-slave:/data \
+  -e PROTOCOL=http \
   mbentley/jenkins-slave \
-  http://jenkins.example.com:8080/computer/nodename/slave-agent.jnlp
+  jenkins.example.com:8080 nodename
 ```
