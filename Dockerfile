@@ -1,9 +1,17 @@
-FROM java:8-jre-alpine
-MAINTAINER Matt Bentley <mbentley@mbentley.net>
+FROM ubuntu:xenial
+MAINTAINER remus@bunduc.ro
 
-RUN apk add --no-cache wget git
-RUN wget -O /usr/local/bin/docker "https://packages.docker.com/1.11/builds/linux/amd64/docker-1.11.2-cs3" &&\
-  chmod +x /usr/local/bin/docker
+ENV JENKINS_HOME="/var/lib/jenkins"
+ENV LANG en_US.UTF-8
+ENV LANGUAGE en_US:en
+ENV LC_ALL en_US.UTF-8
+
+RUN locale-gen en_US.UTF-8
+RUN apt-get -q update
+RUN apt-get install -y --no-install-recommends wget git jq python-pip make openjdk-8-jre-headless openssh-server
+RUN pip install virtualenv
+RUN mkdir -p /var/lib/jenkins
+RUN virtualenv /var/lib/jenkins/ethos
 
 COPY entrypoint.sh /entrypoint.sh
 
