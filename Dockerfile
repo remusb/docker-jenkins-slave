@@ -8,7 +8,7 @@ ENV LC_ALL en_US.UTF-8
 
 RUN locale-gen en_US.UTF-8
 RUN apt-get -q update
-RUN apt-get install -y --no-install-recommends wget git jq python-pip make openjdk-8-jre-headless openssh-server
+RUN apt-get install -y --no-install-recommends wget git jq python-pip make openjdk-8-jre-headless openssh-client curl bc
 RUN pip install virtualenv
 RUN mkdir -p /var/lib/jenkins
 RUN virtualenv /var/lib/jenkins/ethos
